@@ -67,6 +67,7 @@ The above cell calculations depend on calculating corner points of a chessboard 
 
 ![alt text][image2]
 
+
 ### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
 * I used a combination of two color methods to generate a binary image. This combination depends on calling function **combined_thresholds()** which can be found in **Combined Color & Gradient Methods** cell.
@@ -80,6 +81,7 @@ The above cell calculations depend on calculating corner points of a chessboard 
 * Here's my output for this step for the test images in [**test_images**](https://github.com/KarimDahawy/Advanced-Lane-Finding/tree/master/test_images) folder.
 
 ![alt text][image3]
+
 
 ### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
@@ -99,6 +101,7 @@ The above cell calculations depend on calculating corner points of a chessboard 
 * Here's my output for this step for the test images in [**test_images**](https://github.com/KarimDahawy/Advanced-Lane-Finding/tree/master/test_images) folder.
 
 ![alt text][image4]
+
 
 ### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
@@ -120,33 +123,33 @@ The above cell calculations depend on calculating corner points of a chessboard 
 
 ![alt text][image7]
 
-### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-I did this in lines # through # in my code in `my_other_file.py`
+### 5. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
-### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
+* I have used function **draw_lines()** which located in **Draw Lines on Original Images** cell for testing all the test images in **Draw Lines, curvature radius and Vehicle position on test images** cell.
 
-I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
+* Here's my output for this step for the test images in [**test_images**](https://github.com/KarimDahawy/Advanced-Lane-Finding/tree/master/test_images) folder.
 
-![alt text][image6]
+![alt text][image8]
+
+
+### 6. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
+
+* I have used function **Get_Curvature()** which located in **Get Lines Radius** cell to get the lines radius ,then I used function **plot_data** to plot the right and left lines radius and calculate vehicle position for testing all the test images in **Draw Lines, curvature radius and Vehicle position on test images** cell.
+
+* Here's my output for this step for the test images in [**test_images**](https://github.com/KarimDahawy/Advanced-Lane-Finding/tree/master/test_images) folder.
+
+![alt text][image9]
+
 
 -------------------------------------------------------------------------------------------------------------------------------
 ## *Pipeline (video)*
 
-#### 1. Provide a link to your final video output. 
+### Provide a link to your final video output. 
 
 Here's a [**link to my video result**](./project_video_output.mp4)
 
 -------------------------------------------------------------------------------------------------------------------------------
-
 ## *Discussion*
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
-
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
-
-[1]: https://github.com/KarimDahawy/Advanced-Lane-Finding/tree/master/camera_cal
-[2]: https://github.com/KarimDahawy/Advanced-Lane-Finding/blob/master/Advanced%20Lane%20Finding%20Project.ipynb
-[2]: https://github.com/KarimDahawy/Advanced-Lane-Finding/blob/master/Advanced_Lane_Finding_Project.ipynb
-[2]: https://github.com/KarimDahawy/Advanced-Lane-Finding/blob/master/Advanced_Lane_Finding_Project.ipynb
-[2]: https://github.com/KarimDahawy/Advanced-Lane-Finding/tree/master/test_images
