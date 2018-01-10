@@ -22,27 +22,36 @@
 [image4]: ./examples/warped_straight_lines.jpg "Warp Example"
 [image5]: ./examples/color_fit_lines.jpg "Fit Visual"
 [image6]: ./examples/example_output.jpg "Output"
-[video1]: ./project_video.mp4 "Video"
+[video1]: ./project_video.mp4
 
 ## *Writeup / README*
 
 ### Provide a Writeup / README
 
-I have provided a README and a writeup that includes all the rubric points and how I addressed each one.
+I have provided a README file that includes all the rubric points and how I addressed each one.
 
 -------------------------------------------------------------------------------------------------------------------------------
 ## Camera Calibration
 
 ### Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
-The code for this step is contained in  cell of the IPython notebook located in "./examples/example.ipynb" (or in lines # through # of the file called `some_file.py`). 
-[Get Calibration Coefficients][2]
+The code for this step is contained in  **Get Calibration Coefficients** cell of the IPython notebook **Advanced_Lane_Finding_Project.ipynb**.
+The above cell calculations depend on calculating corner points of a cheeseboard which located in **Get Corner points** cell then calculate camera matrix and distortion coefficients which located in **Camera Calibration and undistort images** cell.
+
 I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, **objp** is just a replicated array of coordinates, and **obj_points** will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  **img_points** will be appended with the (x, y) pixel position of each of the corners in the image plane with each successful chessboard detection. 
 
-I then used the output **obj_points** and **img_points** to compute the camera calibration and distortion coefficients using the **cv2.calibrateCamera()** function.  I applied this distortion correction to the **calibration images** in [camera_cal][1]  folder using the **cv2.undistort()** function and obtained this result:
+I then used the output **obj_points** and **img_points** to compute the camera calibration and distortion coefficients using the **cv2.calibrateCamera()** function.  I applied this distortion correction to the **calibration images** in **[camera_cal][1]**  folder using the **cv2.undistort()** function and obtained this result:
 
 ![alt text][image1]
 
+
+As noticed from the above image, I couldn't get some images corner points as the size of these images were lower that the expected size **(9x6)**.
+
+Images names are as follows:
+
+	* calibration_1.jpg
+	* calibration_4.jpg
+	* calibration_5.jpg
 
 -------------------------------------------------------------------------------------------------------------------------------
 ## Pipeline (single images)
