@@ -1,7 +1,6 @@
 # **Advanced Lane Finding**
 
 ## *Advanced Lane Finding Project Goals*
-----------------------------------------------
 
 **The goals / steps of this project are the following:**
 
@@ -14,6 +13,7 @@
 	7. Warp the detected lane boundaries back onto the original image.
 	8. Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
 
+-------------------------------------------------------------------------------------------------------------------------------
 [//]: # (Image References)
 
 [image1]: ./examples/undistort_output.png "Undistorted"
@@ -25,13 +25,13 @@
 [video1]: ./project_video.mp4 "Video"
 
 ## *Writeup / README*
--------------------------
+
 ### Provide a Writeup / README
 
 that includes all the rubric points and how you addressed each one.
 
 
----
+-------------------------------------------------------------------------------------------------------------------------------
 ## Camera Calibration
 
 ### Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
@@ -44,6 +44,7 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 
 ![alt text][image1]
 
+-------------------------------------------------------------------------------------------------------------------------------
 ## Pipeline (single images)
 
 ### 1. Provide an example of a distortion-corrected image.
@@ -103,15 +104,14 @@ I implemented this step in lines # through # in my code in `yet_another_file.py`
 
 ![alt text][image6]
 
----
-
+-------------------------------------------------------------------------------------------------------------------------------
 ## Pipeline (video)
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
 Here's a [link to my video result](./project_video.mp4)
 
----
+-------------------------------------------------------------------------------------------------------------------------------
 
 ## Discussion
 
