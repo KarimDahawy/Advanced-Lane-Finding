@@ -16,7 +16,7 @@
 -------------------------------------------------------------------------------------------------------------------------------
 [//]: # (Image References)
 
-[image1]: ./output_images/1.undistoreted_calibrated_images.png
+[image1]: ./output_images/1.undistorted_calibrated_images.png
 [image2]: ./output_images/2.undistorted_test_images.png
 [image3]: ./output_images/3.binary_test_images.png
 [image4]: ./output_images/4.warped_test_images.png
@@ -40,7 +40,8 @@ The above cell calculations depend on calculating corner points of a cheeseboard
 
 I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, **objp** is just a replicated array of coordinates, and **obj_points** will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  **img_points** will be appended with the (x, y) pixel position of each of the corners in the image plane with each successful chessboard detection. 
 
-I then used the output **obj_points** and **img_points** to compute the camera calibration and distortion coefficients using the **cv2.calibrateCamera()** function.  I applied this distortion correction to the **calibration images** in **[camera_cal][1]**  folder using the **cv2.undistort()** function and obtained this result:
+I then used the output **obj_points** and **img_points** to compute the camera calibration and distortion coefficients using the **cv2.calibrateCamera()** function.  I applied this distortion correction to the **calibration images** in [**camera_cal**](https://github.com/KarimDahawy/Advanced-Lane-Finding/tree/master/camera_cal)  folder using the **cv2.undistort()** function and obtained this result:
+
 
 ![alt text][image1]
 
@@ -61,14 +62,16 @@ Images names are as follows:
 I have implemented a function called **undistort_image()** and can be found in **Undistort Image** cell of the IPython notebook **Advanced_Lane_Finding_Project.ipynb**, then I have used it for testing all the test images in 
 **Test Images for Distortion, warping and appling color thresholds** cell.
 
-Here's my output for this step for the test images in **[test_images][2]** folder.
+Here's my output for this step for the test images in [**test_images**](https://github.com/KarimDahawy/Advanced-Lane-Finding/tree/master/test_images) folder.
+
 ![alt text][image2]
 
 ### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
 I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  
 
-Here's my output for this step for the test images in **[test_images][2]** folder.
+Here's my output for this step for the test images in [**test_images**][2] folder.
+
 ![alt text][image3]
 
 ### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
