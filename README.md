@@ -152,4 +152,22 @@ Here's a [**link to my video result**](./project_video_output.mp4)
 -------------------------------------------------------------------------------------------------------------------------------
 ## *Discussion*
 
-#### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
+### Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
+
+Here I will discuss my pipeline, the methods I used to clarify lane lines from the video, what are the problems I faced, how I fixed them and what are the improvements that can used.
+
+#### 1. PipeLine:
+* I have saved my camera matrix and distortion coefficients in a pickle file ,So I can load it in the pipeline without making the calibration process for every image again and again, This method saved a lot of time during running the pipeline.
+
+* I have used many combination of color methods and gradient methods, but the most efficient method was to use a combination of two color methods which are:
+
+	1. HLS with threshold value (200,255)
+	2. LAB with threshold value (145,225)
+* This combination allowed me to detect yellow and white lines.
+
+* I have used the sliding window technique in order to search for new lines, after that I have skipped using the sliding window technique again as I know where the lines will be.
+
+#### 2. Improvements:
+* Although my combination worked well in the first video, it still needs more modifications as it didn't work well in the challenge video due to high shadows which covered the lanes.
+
+* Modify the lane finding method as in the challenge video when the vehicle was under the bridge there was no lanes detected.
