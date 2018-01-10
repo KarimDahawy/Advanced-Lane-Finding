@@ -36,7 +36,7 @@ I have provided a README file that includes all the rubric points and how I addr
 ### Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
 The code for this step is contained in  **Get Calibration Coefficients** cell of the IPython notebook **Advanced_Lane_Finding_Project.ipynb**.
-The above cell calculations depend on calculating corner points of a cheeseboard which located in **Get Corner points** cell then calculate camera matrix and distortion coefficients which located in **Camera Calibration and undistort images** cell.
+The above cell calculations depend on calculating corner points of a chessboard which located in **Get Corner points** cell then calculate camera matrix and distortion coefficients which located in **Camera Calibration and undistorted images** cell.
 
 I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, **objp** is just a replicated array of coordinates, and **obj_points** will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  **img_points** will be appended with the (x, y) pixel position of each of the corners in the image plane with each successful chessboard detection. 
 
@@ -59,8 +59,7 @@ Images names are as follows:
 
 ### 1. Provide an example of a distortion-corrected image.
 
-I have implemented a function called **undistort_image()** and can be found in **Undistort Image** cell of the IPython notebook **Advanced_Lane_Finding_Project.ipynb**, then I have used it for testing all the test images in 
-**Test Images for Distortion, warping and appling color thresholds** cell.
+I have implemented a function called **undistort_image()** and can be found in **Undistorted Image** cell of the IPython notebook **Advanced_Lane_Finding_Project.ipynb**, then I have used it for testing all the test images in **Test Images for Distortion, warping and applying color thresholds** cell.
 
 Here's my output for this step for the test images in [**test_images**](https://github.com/KarimDahawy/Advanced-Lane-Finding/tree/master/test_images) folder.
 
@@ -68,9 +67,15 @@ Here's my output for this step for the test images in [**test_images**](https://
 
 ### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
-I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  
+I used a combination of two color methods to generate a binary image. This combination depends on calling function **combined_thresholds()** which can be found in **Combined Color & Gradient Methods** cell.
 
-Here's my output for this step for the test images in [**test_images**][2] folder.
+Function **combined_thresholds()** depends on calling two different functions which represent the following color methods:
+	1. Function **lab_select()** which represents LAB color method through using **B-channel**.
+	2. Function **hls_select()** which represents HLS color method through using **L-channel**.
+
+I have used function **combined_thresholds()** for testing all the test images in **Test Images for Distortion, warping and applying color thresholds** cell.
+
+Here's my output for this step for the test images in [**test_images**](https://github.com/KarimDahawy/Advanced-Lane-Finding/tree/master/test_images) folder.
 
 ![alt text][image3]
 
