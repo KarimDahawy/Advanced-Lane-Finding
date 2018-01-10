@@ -16,12 +16,12 @@
 -------------------------------------------------------------------------------------------------------------------------------
 [//]: # (Image References)
 
-[image1]: ./output_images/1.Undistoreted_Calibrated_Images.png
-[image2]: ./test_images/test1.jpg "Road Transformed"
-[image3]: ./examples/binary_combo_example.jpg "Binary Example"
-[image4]: ./examples/warped_straight_lines.jpg "Warp Example"
-[image5]: ./examples/color_fit_lines.jpg "Fit Visual"
-[image6]: ./examples/example_output.jpg "Output"
+[image1]: ./output_images/1.undistoreted_calibrated_images.png
+[image2]: ./output_images/2.undistorted_test_images.png
+[image3]: ./output_images/3.binary_test_images.png
+[image4]: ./output_images/4.warped_test_images.png
+[image5]: ./output_images/color_fit_lines.jpg "Fit Visual"
+[image6]: ./output_images/example_output.jpg "Output"
 [video1]: ./project_video.mp4
 
 ## *Writeup / README*
@@ -58,13 +58,17 @@ Images names are as follows:
 
 ### 1. Provide an example of a distortion-corrected image.
 
-To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
+I have implemented a function called **undistort_image()** and can be found in **Undistort Image** cell of the IPython notebook **Advanced_Lane_Finding_Project.ipynb**, then I have used it for testing all the test images in 
+**Test Images for Distortion, warping and appling color thresholds** cell.
+
+Here's my output for this step for the test images in **[test_images][2]** folder.
 ![alt text][image2]
 
 ### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
-I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
+I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  
 
+Here's my output for this step for the test images in **[test_images][2]** folder.
 ![alt text][image3]
 
 ### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
@@ -132,3 +136,4 @@ Here I'll talk about the approach I took, what techniques I used, what worked an
 [2]: https://github.com/KarimDahawy/Advanced-Lane-Finding/blob/master/Advanced%20Lane%20Finding%20Project.ipynb
 [2]: https://github.com/KarimDahawy/Advanced-Lane-Finding/blob/master/Advanced_Lane_Finding_Project.ipynb
 [2]: https://github.com/KarimDahawy/Advanced-Lane-Finding/blob/master/Advanced_Lane_Finding_Project.ipynb
+[2]: https://github.com/KarimDahawy/Advanced-Lane-Finding/tree/master/test_images
