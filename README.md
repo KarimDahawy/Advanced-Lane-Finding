@@ -16,7 +16,7 @@
 -------------------------------------------------------------------------------------------------------------------------------
 [//]: # (Image References)
 
-[image1]: ./examples/undistort_output.png "Undistorted"
+[image1]: ./output_images/1.Undistoreted_Calibrated_Images.png"
 [image2]: ./test_images/test1.jpg "Road Transformed"
 [image3]: ./examples/binary_combo_example.jpg "Binary Example"
 [image4]: ./examples/warped_straight_lines.jpg "Warp Example"
@@ -28,8 +28,7 @@
 
 ### Provide a Writeup / README
 
-that includes all the rubric points and how you addressed each one.
-
+I have provided a README and a writeup that includes all the rubric points and how I addressed each one.
 
 -------------------------------------------------------------------------------------------------------------------------------
 ## Camera Calibration
