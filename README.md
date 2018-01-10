@@ -81,31 +81,20 @@ The above cell calculations depend on calculating corner points of a chessboard 
 
 ### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
-The code for my perspective transform includes a function called `warper()`, which appears in lines 1 through 8 in the file `example.py` (output_images/examples/example.py) (or, for example, in the 3rd code cell of the IPython notebook).  The `warper()` function takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  I chose the hardcode the source and destination points in the following manner:
-
-```python
-src = np.float32(
-    [[(img_size[0] / 2) - 55, img_size[1] / 2 + 100],
-    [((img_size[0] / 6) - 10), img_size[1]],
-    [(img_size[0] * 5 / 6) + 60, img_size[1]],
-    [(img_size[0] / 2 + 55), img_size[1] / 2 + 100]])
-dst = np.float32(
-    [[(img_size[0] / 4), 0],
-    [(img_size[0] / 4), img_size[1]],
-    [(img_size[0] * 3 / 4), img_size[1]],
-    [(img_size[0] * 3 / 4), 0]])
-```
-
-This resulted in the following source and destination points:
+* The code for my perspective transform includes a function called **warper()**, which located in **Perspective Transform** cell of the IPython notebook **Advanced_Lane_Finding_Project.ipynb**.  The **warper()** function takes as inputs an image **(Image)**, as well as source **(SourcePoints)** and destination **(DestinationPoints)** points.  I chose the source and destination points in the following manner:
 
 | Source        | Destination   | 
 |:-------------:|:-------------:| 
-| 585, 460      | 320, 0        | 
-| 203, 720      | 320, 720      |
-| 1127, 720     | 960, 720      |
-| 695, 460      | 960, 0        |
+| 575, 460      | 250, 0        | 
+| 720, 460      | 1050, 0      |
+| 100, 720     | 250, 700      |
+| 1200, 720      | 1050, 700        |
 
-I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
+* I verified that my perspective transform was working as expected by drawing the **(SourcePoints)** and **(DestinationPoints)**  points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
+
+* I have used function **warper()** for testing all the test images in **Test Images for Distortion, warping and applying color thresholds** cell.
+
+* Here's my output for this step for the test images in [**test_images**](https://github.com/KarimDahawy/Advanced-Lane-Finding/tree/master/test_images) folder.
 
 ![alt text][image4]
 
