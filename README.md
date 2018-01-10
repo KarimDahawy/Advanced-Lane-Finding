@@ -20,9 +20,11 @@
 [image2]: ./output_images/2.undistorted_test_images.png
 [image3]: ./output_images/3.binary_test_images.png
 [image4]: ./output_images/4.warped_test_images.png
-[image5]: ./output_images/color_fit_lines.jpg "Fit Visual"
-[image6]: ./output_images/example_output.jpg "Output"
-[video1]: ./project_video.mp4
+[image5]: ./output_images/5.histogram_test_images.png
+[image6]: ./examples/color_fit_lines.jpg
+[image7]: ./output_images/6.draw_lines_test_images.png
+[image8]: ./output_images/7.draw_lines_world_test_images.png
+[image9]: ./output_images/8.draw_lines_world_data_test_images.png
 
 ## *Writeup / README*
 
@@ -31,7 +33,7 @@
 * I have provided a README file that includes all the rubric points and how I addressed each one.
 
 -------------------------------------------------------------------------------------------------------------------------------
-## Camera Calibration
+## *Camera Calibration*
 
 ### Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
@@ -55,7 +57,7 @@ The above cell calculations depend on calculating corner points of a chessboard 
 	* calibration_5.jpg
 
 -------------------------------------------------------------------------------------------------------------------------------
-## Pipeline (single images)
+## *Pipeline (single images)*
 
 ### 1. Provide an example of a distortion-corrected image.
 
@@ -100,9 +102,23 @@ The above cell calculations depend on calculating corner points of a chessboard 
 
 ### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
-Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
+* First I have calculated the histogram for all the warped test images to make sure that the detected lines have the highest peaks.
+
+* I have used function **calc_histogram()** which located in **Calculate Histogram** cell for testing all the test images in **Draw Histogram of images in test_images folder** cell.
+
+* Here's my output for this step for the test images in [**test_images**](https://github.com/KarimDahawy/Advanced-Lane-Finding/tree/master/test_images) folder.
 
 ![alt text][image5]
+
+* Then I used the histogram data to fit my lane lines with a 2nd order polynomial kinda like this:
+
+![alt text][image6]
+
+* I have used function **Visualize_Lines()** which located in **Find Lines by Implement Sliding Windows and Fit a Polynomial** cell for testing all the test images in **Draw Lines, curvature radius and Vehicle position on test images** cell.
+
+* Here's my output for this step for the test images in [**test_images**](https://github.com/KarimDahawy/Advanced-Lane-Finding/tree/master/test_images) folder.
+
+![alt text][image7]
 
 ### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
@@ -115,15 +131,15 @@ I implemented this step in lines # through # in my code in `yet_another_file.py`
 ![alt text][image6]
 
 -------------------------------------------------------------------------------------------------------------------------------
-## Pipeline (video)
+## *Pipeline (video)*
 
-#### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
+#### 1. Provide a link to your final video output. 
 
-Here's a [link to my video result](./project_video.mp4)
+Here's a [**link to my video result**](./project_video_output.mp4)
 
 -------------------------------------------------------------------------------------------------------------------------------
 
-## Discussion
+## *Discussion*
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
