@@ -16,7 +16,7 @@
 -------------------------------------------------------------------------------------------------------------------------------
 [//]: # (Image References)
 
-[image1]: ./output_images/1.Undistoreted_Calibrated_Images.png"
+[image1]: ./output_images/1.Undistoreted_Calibrated_Images.png
 [image2]: ./test_images/test1.jpg "Road Transformed"
 [image3]: ./examples/binary_combo_example.jpg "Binary Example"
 [image4]: ./examples/warped_straight_lines.jpg "Warp Example"
@@ -35,13 +35,14 @@ I have provided a README and a writeup that includes all the rubric points and h
 
 ### Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
-The code for this step is contained in the first code cell of the IPython notebook located in "./examples/example.ipynb" (or in lines # through # of the file called `some_file.py`).  
+The code for this step is contained in  cell of the IPython notebook located in "./examples/example.ipynb" (or in lines # through # of the file called `some_file.py`). 
+[Get Calibration Coefficients][2]
+I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, **objp** is just a replicated array of coordinates, and **obj_points** will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  **img_points** will be appended with the (x, y) pixel position of each of the corners in the image plane with each successful chessboard detection. 
 
-I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, `objp` is just a replicated array of coordinates, and `objpoints` will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  `imgpoints` will be appended with the (x, y) pixel position of each of the corners in the image plane with each successful chessboard detection.  
-
-I then used the output `objpoints` and `imgpoints` to compute the camera calibration and distortion coefficients using the `cv2.calibrateCamera()` function.  I applied this distortion correction to the test image using the `cv2.undistort()` function and obtained this result: 
+I then used the output **obj_points** and **img_points** to compute the camera calibration and distortion coefficients using the **cv2.calibrateCamera()** function.  I applied this distortion correction to the **calibration images** in [camera_cal][1]  folder using the **cv2.undistort()** function and obtained this result:
 
 ![alt text][image1]
+
 
 -------------------------------------------------------------------------------------------------------------------------------
 ## Pipeline (single images)
@@ -117,3 +118,8 @@ Here's a [link to my video result](./project_video.mp4)
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
 Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+
+[1]: https://github.com/KarimDahawy/Advanced-Lane-Finding/tree/master/camera_cal
+[2]: https://github.com/KarimDahawy/Advanced-Lane-Finding/blob/master/Advanced%20Lane%20Finding%20Project.ipynb
+[2]: https://github.com/KarimDahawy/Advanced-Lane-Finding/blob/master/Advanced_Lane_Finding_Project.ipynb
+[2]: https://github.com/KarimDahawy/Advanced-Lane-Finding/blob/master/Advanced_Lane_Finding_Project.ipynb
